@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - ./scripts/ecr-login.sh
+      - ./scripts/docker-hub-login.sh
       - . ./scripts/codebuild-extras.sh
 
   build:
