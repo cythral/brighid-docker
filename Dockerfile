@@ -4,7 +4,7 @@ RUN apk --no-cache upgrade
 RUN apk --no-cache add libcap gcompat runuser libgcc libstdc++ krb5-libs libssl1.1 ca-certificates
 RUN rm -rf /var/cache/apk/*
 RUN chmod 750 /usr/local/bin/decrs
-RUN adduser --system --no-create-home brighid
+RUN adduser --system brighid
 COPY openssl.cnf /etc/ssl/openssl.cnf
  
 FROM scratch
