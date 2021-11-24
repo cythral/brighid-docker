@@ -1,4 +1,4 @@
-FROM alpine:3.14.3 as base
+FROM alpine:3.15.0 as base
 COPY --from=public.ecr.aws/cythral/decrs /decrs /usr/local/bin/decrs
 COPY watch.sh /usr/local/bin/watch
 
