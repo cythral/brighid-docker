@@ -7,7 +7,7 @@ RUN apk --no-cache add libcap gcompat runuser libgcc libstdc++ krb5-libs libssl1
 RUN rm -rf /var/cache/apk/*
 RUN chmod 750 /usr/local/bin/decrs /usr/local/bin/watch
 RUN adduser --system brighid
-COPY openssl.cnf /etc/ssl/openssl.cnf
+COPY openssl.cnf /etc/ssl1.1/openssl.cnf
  
 FROM scratch
 ENV \
