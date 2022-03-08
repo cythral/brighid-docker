@@ -81,9 +81,11 @@ namespace Brighid.Docker.Cicd.BuildDriver
             await Step("Building Docker Image", async () =>
             {
                 cancellationToken.ThrowIfCancellationRequested();
+
+                var tag = options.Version.Replace('/', '-');
                 var buildOptions = new Dictionary<string, object>
                 {
-                    ["--tag"] = $"{outputs.ImageRepositoryUri}:{options.Version}",
+                    ["--tag"] = $"{outputs.ImageRepositoryUri}:{tag}",
                     ["--file"] = $"{ProjectRootDirectoryAttribute.ThisAssemblyProjectRootDirectory}Dockerfile",
                     ["--push"] = options.Push,
                 };
