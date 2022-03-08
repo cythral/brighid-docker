@@ -87,6 +87,7 @@ namespace Brighid.Docker.Cicd.BuildDriver
                 {
                     ["--tag"] = $"{outputs.ImageRepositoryUri}:{tag}",
                     ["--file"] = $"{ProjectRootDirectoryAttribute.ThisAssemblyProjectRootDirectory}Dockerfile",
+                    ["--platform"] = "linux/arm64",
                     ["--push"] = options.Push,
                 };
 
