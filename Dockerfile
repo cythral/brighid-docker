@@ -4,7 +4,7 @@ COPY src/migrate.sh /usr/local/bin/migrate
 COPY src/watch.sh /usr/local/bin/watch
 
 RUN apk --no-cache upgrade
-RUN apk --no-cache add libcap gcompat runuser libgcc libstdc++ krb5-libs libssl1.1 ca-certificates inotify-tools
+RUN apk --no-cache add libcap gcompat runuser libgcc libstdc++ krb5-libs libssl1.1 ca-certificates inotify-tools curl
 RUN rm -rf /var/cache/apk/*
 RUN chmod 750 /usr/local/bin/decrs /usr/local/bin/watch /usr/local/bin/migrate
 RUN adduser --system brighid
