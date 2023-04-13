@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - "master"
-    tags:
-      - "*"
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize]
@@ -28,7 +26,8 @@ jobs:
     outputs:
       artifacts-location: ${{ steps.build.outputs.artifacts-location }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -40,7 +39,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "18"
 
       - name: Install CDK
         run: npm install --global cdk
@@ -51,11 +50,19 @@ jobs:
       - name: Display .NET Info
         run: dotnet --info
 
+      - name: Restore Tools
+        run: dotnet tool restore
+
       - name: Expose GitHub Runtime
         uses: crazy-max/ghaction-github-runtime@v2
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Get Version
+        id: get-version
+        run: |
+          echo "version=$(dotnet nbgv get-version --variable NuGetPackageVersion)" >> $GITHUB_OUTPUT
 
       - name: Build
         id: build
@@ -63,5 +70,13 @@ jobs:
           dotnet run \
             --verbosity minimal \
             --project cicd/Cicd.BuildDriver/Cicd.BuildDriver.csproj -- \
-            --version ${{ github.ref_name }} \
-            --push ${{ startsWith(github.ref, 'refs/tags/') }}
+            --version ${{ steps.get-version.outputs.version }} \
+            --push ${{ github.ref == 'refs/heads/master' }}
+
+      - uses: ncipollo/release-action@v1
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          commit: ${{ github.sha }}
+          token: ${{ secrets.GH_TOKEN }}
+          tag: v${{ steps.get-version.outputs.version }}
+          generateReleaseNotes: true
