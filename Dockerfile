@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:3.16.2 as base
+FROM arm64v8/alpine:3.17.3 as base
 COPY --from=public.ecr.aws/cythral/decrs:0.1.0 /decrs /usr/local/bin/decrs
 COPY src/migrate.sh /usr/local/bin/migrate
 COPY src/watch.sh /usr/local/bin/watch
