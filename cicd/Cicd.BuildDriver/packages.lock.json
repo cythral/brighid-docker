@@ -93,13 +93,13 @@
       },
       "Amazon.JSII.Runtime": {
         "type": "Transitive",
-        "resolved": "1.77.0",
-        "contentHash": "ZBDAso5ldpTDIWAb7zQwr5l02ovxP5AxmeLEKvvmhmZmFbe0CdmKHW/FUdjKwFEnzcuqtkqy3LxVCHGuHfL7vg==",
+        "resolved": "1.80.0",
+        "contentHash": "cBH5ZJHn7sQ8KLZeMV0ko0rhzSYHvBBYk2SMPqMiZ51It6hx40Z2t49ZZT2CCQP+wqN4/0IgrCyUP2GJb2Sk+Q==",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "5.0.0",
           "Microsoft.Extensions.Logging.Console": "5.0.0",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.3"
         }
       },
       "AWSSDK.CloudFormation": {
@@ -141,10 +141,10 @@
       },
       "Constructs": {
         "type": "Transitive",
-        "resolved": "10.1.131",
-        "contentHash": "8XJi7XbmtpNS2Bl/La78GoolMgruLRJx4N2edCh4LLyn2z6NP6Gc2EVL9LizoDHvb1MOBj7G2PWAtNNQwus1Rg==",
+        "resolved": "10.1.309",
+        "contentHash": "vGlLLvAlG48dhNlGR6hlW00UsFflySNlHGqcaPBKpmQqHzsvsZupgQXLGWOHQSeui6mxSgZp4MS2bejyOEOYwQ==",
         "dependencies": {
-          "Amazon.JSII.Runtime": "[1.69.0, 2.0.0)"
+          "Amazon.JSII.Runtime": "[1.80.0, 2.0.0)"
         }
       },
       "Microsoft.Build.Framework": {
@@ -416,8 +416,8 @@
       },
       "Newtonsoft.Json": {
         "type": "Transitive",
-        "resolved": "13.0.2",
-        "contentHash": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg=="
+        "resolved": "13.0.3",
+        "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
       },
       "StyleCop.Analyzers.Unstable": {
         "type": "Transitive",
@@ -521,7 +521,7 @@
         "dependencies": {
           "Amazon.CDK.Lib": "[2.71.0, )",
           "Cicd.Utils": "[1.0.0, )",
-          "Constructs": "[10.1.131, )",
+          "Constructs": "[10.1.309, )",
           "Microsoft.Build.Framework": "[17.3.2, )",
           "Microsoft.Build.Utilities.Core": "[17.3.2, )"
         }
