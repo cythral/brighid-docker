@@ -24,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      artifacts-location: ${{ steps.build.outputs.artifacts-location }}
+      version: ${{ steps.get-version.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -73,10 +73,16 @@ jobs:
             --version ${{ steps.get-version.outputs.version }} \
             --push ${{ github.ref == 'refs/heads/master' }}
 
+  release:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    if: ${{ github.ref == 'refs/heads/master' }}
+    concurrency: release
+    steps:
       - uses: ncipollo/release-action@v1
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           commit: ${{ github.sha }}
           token: ${{ secrets.GH_TOKEN }}
-          tag: v${{ steps.get-version.outputs.version }}
+          tag: v${{ needs.build.outputs.version }}
           generateReleaseNotes: true
