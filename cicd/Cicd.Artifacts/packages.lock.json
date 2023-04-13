@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dependencies": {
-    "net6.0": {
+    "net7.0": {
       "Amazon.CDK.Lib": {
         "type": "Direct",
         "requested": "[2.71.0, )",
@@ -324,10 +324,10 @@
       "cicd.utils": {
         "type": "Project",
         "dependencies": {
-          "AWSSDK.CloudFormation": "3.7.104.38",
-          "AWSSDK.ECR": "3.7.100.100",
-          "AWSSDK.ECRPublic": "3.7.101.49",
-          "AWSSDK.KeyManagementService": "3.7.101.75"
+          "AWSSDK.CloudFormation": "[3.7.104.38, )",
+          "AWSSDK.ECR": "[3.7.100.100, )",
+          "AWSSDK.ECRPublic": "[3.7.101.49, )",
+          "AWSSDK.KeyManagementService": "[3.7.101.75, )"
         }
       }
     }

@@ -24,7 +24,8 @@ namespace Brighid.Docker.Cicd.Utils
         /// <returns>The resulting task.</returns>
         public async Task<Dictionary<string, string>> Deploy(DeployContext context, CancellationToken cancellationToken)
         {
-            var stackId = await CreateChangeSet(context, cancellationToken);
+            var changeSetResponse = await CreateChangeSet(context, cancellationToken);
+            var stackId = changeSetResponse.StackId;
 
             try
             {
@@ -35,12 +36,13 @@ namespace Brighid.Docker.Cicd.Utils
             catch (NoUpdatesException)
             {
                 Console.WriteLine("Stack already up-to-date.");
+                await DeleteChangeSet(changeSetResponse.Id, cancellationToken);
             }
 
             return await GetOutputs(stackId, cancellationToken);
         }
 
-        private async Task<string> CreateChangeSet(DeployContext context, CancellationToken cancellationToken)
+        private async Task<CreateChangeSetResponse> CreateChangeSet(DeployContext context, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -65,7 +67,7 @@ namespace Brighid.Docker.Cicd.Utils
             };
 
             var response = await cloudformation.CreateChangeSetAsync(request, cancellationToken);
-            return response.StackId;
+            return response;
         }
 
         private async Task WaitForChangeSetCreate(string stackId, DeployContext context, CancellationToken cancellationToken)
@@ -188,6 +190,12 @@ namespace Brighid.Docker.Cicd.Utils
             var response = await cloudformation.DescribeStacksAsync(request, cancellationToken);
             var stack = response.Stacks.First();
             return stack.Outputs.ToDictionary(output => output.OutputKey, output => output.OutputValue);
+        }
+
+        private async Task DeleteChangeSet(string changeSetId, CancellationToken cancellationToken)
+        {
+            var request = new DeleteChangeSetRequest { ChangeSetName = changeSetId };
+            await cloudformation.DeleteChangeSetAsync(request, cancellationToken);
         }
     }
 }

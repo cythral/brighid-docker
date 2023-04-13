@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dependencies": {
-    "net6.0": {
+    "net7.0": {
       "AWSSDK.SecurityToken": {
         "type": "Direct",
         "requested": "[3.7.101.35, )",
@@ -519,20 +519,20 @@
       "cicd.artifacts": {
         "type": "Project",
         "dependencies": {
-          "Amazon.CDK.Lib": "2.71.0",
-          "Cicd.Utils": "1.0.0",
-          "Constructs": "10.1.131",
-          "Microsoft.Build.Framework": "17.3.2",
-          "Microsoft.Build.Utilities.Core": "17.3.2"
+          "Amazon.CDK.Lib": "[2.71.0, )",
+          "Cicd.Utils": "[1.0.0, )",
+          "Constructs": "[10.1.131, )",
+          "Microsoft.Build.Framework": "[17.3.2, )",
+          "Microsoft.Build.Utilities.Core": "[17.3.2, )"
         }
       },
       "cicd.utils": {
         "type": "Project",
         "dependencies": {
-          "AWSSDK.CloudFormation": "3.7.104.38",
-          "AWSSDK.ECR": "3.7.100.100",
-          "AWSSDK.ECRPublic": "3.7.101.49",
-          "AWSSDK.KeyManagementService": "3.7.101.75"
+          "AWSSDK.CloudFormation": "[3.7.104.38, )",
+          "AWSSDK.ECR": "[3.7.100.100, )",
+          "AWSSDK.ECRPublic": "[3.7.101.49, )",
+          "AWSSDK.KeyManagementService": "[3.7.101.75, )"
         }
       }
     }
