@@ -164,11 +164,11 @@
       },
       "Microsoft.Build.Utilities.Core": {
         "type": "Transitive",
-        "resolved": "17.3.2",
-        "contentHash": "XnAWKrJ2ewyVxAdi0gmk3GYqF02u+0zFGjF4A6f1FJy4/GUgfMJ/hz1N+RzUcjQ4Oi6hmwYHNFY3uIGAgckDig==",
+        "resolved": "17.5.0",
+        "contentHash": "fKsS1AND9Jk8etIze+0PRK0OoxeUWEK3Ulrc+MFQr+1aekvLztnC1Tdpwt3Edp2485l0lGWFz+oSn/BIoxJV8A==",
         "dependencies": {
-          "Microsoft.Build.Framework": "17.3.2",
-          "Microsoft.NET.StringTools": "17.3.2",
+          "Microsoft.Build.Framework": "17.5.0",
+          "Microsoft.NET.StringTools": "17.5.0",
           "System.Collections.Immutable": "6.0.0",
           "System.Configuration.ConfigurationManager": "6.0.0"
         }
@@ -404,12 +404,8 @@
       },
       "Microsoft.NET.StringTools": {
         "type": "Transitive",
-        "resolved": "17.3.2",
-        "contentHash": "3sIZECEDSY9kP7BqPLOSIHLsiqv0TSU5cIGAMung+NrefIooo1tBMVRt598CGz+kUF1xlbOsO8nPAYpgfokx/Q==",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        }
+        "resolved": "17.5.0",
+        "contentHash": "EWy7NK9ZYYBDkUDyh087ML9ygKA30aFtWwxubAewyj9dxsEME85rrv4Vu6a8O9hgbLPtyN91lyWBzpVrUPuqwA=="
       },
       "Microsoft.Win32.SystemEvents": {
         "type": "Transitive",
@@ -460,11 +456,6 @@
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "6.0.0"
         }
-      },
-      "System.Memory": {
-        "type": "Transitive",
-        "resolved": "4.5.5",
-        "contentHash": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw=="
       },
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Transitive",
@@ -518,7 +509,7 @@
           "Cicd.Utils": "[1.0.0, )",
           "Constructs": "[10.1.309, )",
           "Microsoft.Build.Framework": "[17.5.0, )",
-          "Microsoft.Build.Utilities.Core": "[17.3.2, )"
+          "Microsoft.Build.Utilities.Core": "[17.5.0, )"
         }
       },
       "cicd.utils": {
