@@ -111,8 +111,8 @@
       },
       "AWSSDK.CloudFormation": {
         "type": "Transitive",
-        "resolved": "3.7.107.4",
-        "contentHash": "3lWm9/5YAVOmn2//ZBhDK26rwJWisdrIwR+h1dGosDwST2SPk1JRbPED0LQyrwE8M5hR/p4TXevXCinJxAP+pQ==",
+        "resolved": "3.7.108",
+        "contentHash": "IGmu9/6Lzvpk27RUwDi9s+zUX8v7W4GWl3t7qHuosTgf4WD76rdg+wOGogYpHjDjKr0LmVIACpucT4E+2iJ7eA==",
         "dependencies": {
           "AWSSDK.Core": "[3.7.107.7, 4.0.0)"
         }
@@ -509,7 +509,7 @@
       "cicd.utils": {
         "type": "Project",
         "dependencies": {
-          "AWSSDK.CloudFormation": "[3.7.107.4, )",
+          "AWSSDK.CloudFormation": "[3.7.108, )",
           "AWSSDK.ECR": "[3.7.100.146, )",
           "AWSSDK.ECRPublic": "[3.7.102.36, )",
           "AWSSDK.KeyManagementService": "[3.7.103.5, )"
