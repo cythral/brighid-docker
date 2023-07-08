@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CloudFormation" Version="3.7.108.5" />
-    <PackageReference Include="AWSSDK.ECR" Version="3.7.100.151" />
-    <PackageReference Include="AWSSDK.ECRPublic" Version="3.7.102.41" />
-    <PackageReference Include="AWSSDK.KeyManagementService" Version="3.7.104.2" />
+    <PackageReference Include="AWSSDK.CloudFormation" Version="3.7.108.6" />
+    <PackageReference Include="AWSSDK.ECR" Version="3.7.100.152" />
+    <PackageReference Include="AWSSDK.ECRPublic" Version="3.7.102.42" />
+    <PackageReference Include="AWSSDK.KeyManagementService" Version="3.7.104.3" />
   </ItemGroup>
 </Project>
