@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CloudFormation" Version="3.7.204.12" />
+    <PackageReference Include="AWSSDK.CloudFormation" Version="3.7.205" />
     <PackageReference Include="AWSSDK.ECR" Version="3.7.201.31" />
     <PackageReference Include="AWSSDK.ECRPublic" Version="3.7.200.67" />
     <PackageReference Include="AWSSDK.KeyManagementService" Version="3.7.200.67" />
